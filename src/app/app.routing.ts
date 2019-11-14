@@ -6,8 +6,6 @@ import { DefaultLayoutComponent } from './containers';
 
 import { P404Component } from './shared/error/404.component';
 import { P500Component } from './shared/error/500.component';
-import { LoginComponent } from './shared/login/login.component';
-import { RegisterComponent } from './shared/register/register.component';
 
 export const routes: Routes = [
   {
@@ -30,29 +28,28 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
-  {
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Dashboard'
     },
     children: [
       {
+        path: "",
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
         path: 'dashboard',
         loadChildren: () => import('./CorePages/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'badges',
+        loadChildren: () => import('./CorePages/badges/badges.module').then(m => m.BadgesModule)
+      },
+      {
+        path: 'kudos',
+        loadChildren: () => import('./CorePages/kudos/kudos.module').then(m => m.KudosModule)
       }
     ]
   },
