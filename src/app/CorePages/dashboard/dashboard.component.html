@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-sm-5">
           <h4 class="card-title mb-0">Your performance</h4>
-          <div class="small text-muted">2019</div>
+          <div class="small text-muted pb-2">2019</div>
         </div>
       </div>
       <div class="chart-wrapper">
@@ -16,17 +16,16 @@
         [legend]="lineChartLegend"
         [chartType]="lineChartType"
         (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"></canvas>
+        (chartClick)="chartClicked($event)"
+        height="60"></canvas>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="card">
-        <div class="card-header">
-          Leaderboard
-        </div>
         <div class="card-body" *ngIf="leaderBoardData">
+          <div class="card-title h4">Leaderboard</div>
           <table class="table table-responsive-sm table-hover table-outline mb-0">
             <thead class="thead-light">
               <tr>
@@ -53,5 +52,36 @@
         </div>
       </div>
     </div><!--/.col-->
+
+    <div class="col-md-6">
+        <div class="card">
+          <div class="card-body" *ngIf="activeUsersData">
+            <div class="card-title h4">Active Users</div>
+            <table class="table table-responsive-sm table-hover table-outline mb-0">
+              <thead class="thead-light">
+                <tr>
+                  <th class="text-center"><i class="icon-people"></i></th>
+                  <th>Employee</th>
+                  <th class="text-center">Project</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of activeUsersData">
+                  <td class="text-center">
+                    <div class="avatar">
+                      <img src="assets/img/avatars/default_user.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                    </div>
+                  </td>
+                  <td>
+                    <div>{{data.name}}</div>
+                    <div class="small text-muted">{{data.message}}</div>
+                  </td>
+                  <td class="text-center">{{data.project}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!--/.col-->
   </div><!--/.row-->
 </div>

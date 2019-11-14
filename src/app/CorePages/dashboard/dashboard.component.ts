@@ -20,7 +20,19 @@ export class DashboardComponent implements OnInit {
     'July','August', 'September', 'October', 'November', 'December'];
   public lineChartOptions: any = {
     animation: false,
-    responsive: true
+    responsive: true,
+    scales: { 
+      yAxes: [{
+        ticks: { 
+          min: 2,
+          max: 5
+        },
+      }]
+    },
+    legend: {
+      display: true,
+      position: 'bottom'
+    }
   };
   public lineChartColours: Array<any> = [
     { // grey
@@ -52,6 +64,7 @@ export class DashboardComponent implements OnInit {
   public lineChartType = 'line';
 
   public leaderBoardData: any = [];
+  public activeUsersData: any = [];
 
   constructor() { }
 
@@ -80,6 +93,33 @@ export class DashboardComponent implements OnInit {
       'name': 'Amit',
       'image': 'default_user',
       'message': 'Won 2 badges',
+      'project': 'Breeze'
+    }];
+
+    this.activeUsersData = [{
+      'name': 'Ashutosh',
+      'image': 'default_user',
+      'message': 'Added 5 comments/emoticons',
+      'project': 'Breeze'
+    }, {
+      'name': 'Jane',
+      'image': 'default_user',
+      'message': 'Added 4 comments/emoticons',
+      'project': 'FPG'
+    }, {
+      'name': 'Saurabh',
+      'image': 'default_user',
+      'message': 'Added 3 comments/emoticons',
+      'project': 'App Orchid'
+    }, {
+      'name': 'Anand',
+      'image': 'default_user',
+      'message': 'Added 2 comments/emoticons',
+      'project': 'Breeze'
+    }, {
+      'name': 'Amit',
+      'image': 'default_user',
+      'message': 'Added 2 comments/emoticons',
       'project': 'Breeze'
     }];
   }
