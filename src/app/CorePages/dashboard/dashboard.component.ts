@@ -51,9 +51,37 @@ export class DashboardComponent implements OnInit {
   public lineChartLegend = true;
   public lineChartType = 'line';
 
+  public leaderBoardData: any = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.leaderBoardData = [{
+      'name': 'Ashutosh',
+      'image': 'default_user',
+      'message': 'Won 5 badges',
+      'project': 'Breeze'
+    }, {
+      'name': 'Jane',
+      'image': 'default_user',
+      'message': 'Won 4 badges',
+      'project': 'FPG'
+    }, {
+      'name': 'Saurabh',
+      'image': 'default_user',
+      'message': 'Won 3 badges',
+      'project': 'App Orchid'
+    }, {
+      'name': 'Anand',
+      'image': 'default_user',
+      'message': 'Won 2 badges',
+      'project': 'Breeze'
+    }, {
+      'name': 'Amit',
+      'image': 'default_user',
+      'message': 'Won 2 badges',
+      'project': 'Breeze'
+    }];
   }
 
   // events
