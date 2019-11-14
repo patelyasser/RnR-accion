@@ -1,1 +1,63 @@
 // Here you can add other styles
+
+// Word wrapping in the grid table
+.ui-table {
+    .ui-table-wrapper {
+        word-wrap: break-word;
+    }
+}
+
+// Add custom css in grid layout
+ngx-web-grid {
+    .ui-table {
+        .ui-paginator {
+            .ui-dropdown {
+                height: auto;
+            }
+        }
+    }
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+.default-cursor {
+    cursor: default;
+}
+
+.clear-float {
+    clear: both;
+}
+
+.view-only {
+    p-button[title="Edit"] {
+        cursor: not-allowed;
+        button {
+            pointer-events: none;
+        }
+    }
+}
+
+.tab-content {
+    .tab-pane {
+        padding: 15px 0;
+    }
+}
+
+html:not([dir=rtl]) {
+    .aside-menu-show {
+        &.aside-menu-fixed {
+            .main, .app-footer {
+                margin-right: 0;
+            }
+        }
+    }
+    .aside-menu-lg-show {
+        &.aside-menu-fixed {
+            .main, .app-footer {
+                margin-right: 0;
+            }
+        }
+    }
+}

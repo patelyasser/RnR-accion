@@ -1,0 +1,25 @@
+.breeze-logo {
+    height: 25px;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 610px){
+    .footer{
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .footer{
+        font-size: 11px;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

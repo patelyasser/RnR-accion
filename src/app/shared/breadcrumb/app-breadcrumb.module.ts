@@ -1,0 +1,32 @@
+import { CommonModule} from '@angular/common';
+import { NgModule, ModuleWithProviders} from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+// App Breadcrumb Component
+import { AppBreadcrumbService } from './app-breadcrumb.service';
+import { AppBreadcrumbComponent } from './app-breadcrumb.component';
+import { CuiBreadcrumbComponent } from './cui-breadcrumb.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { FormsModule } from '@angular/forms';
+
+// @dynamic
+@NgModule({
+  imports: [ 
+    CommonModule,
+    RouterModule, 
+    BsDatepickerModule.forRoot(),
+    FormsModule
+  ],
+  exports: [ AppBreadcrumbComponent, CuiBreadcrumbComponent ],
+  declarations: [ AppBreadcrumbComponent, CuiBreadcrumbComponent ]
+})
+export class AppBreadcrumbModule {
+  static forRoot(config?: any): ModuleWithProviders {
+    return {
+      ngModule: AppBreadcrumbModule,
+      providers: [
+        AppBreadcrumbService,
+      ]
+    };
+  }
+}

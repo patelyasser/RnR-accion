@@ -1,0 +1,10 @@
+<div class="card text-white equal-height" [ngClass]="class">
+    <div class="card-body pointer-cursor">
+        <div class="h1 widget-alignments text-white text-right">
+            <div class="h3 mb-0">{{count}}</div>
+            <i *ngIf="!image" class="fa fa-street-view text-white" aria-hidden="true"></i>
+            <img *ngIf="image" [src]="imagePath" height="50" width="40" [alt]="image">
+        </div>
+        <div class="widget-font-size font-weight-bold clear-float">{{title}}</div>
+    </div>
+</div>

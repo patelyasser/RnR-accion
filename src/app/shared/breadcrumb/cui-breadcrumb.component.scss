@@ -1,0 +1,44 @@
+.subheader {
+    display: flex;
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    position: relative;
+    justify-content: flex-start;
+    border-bottom: 1px solid #c8ced3;
+}
+
+.breadcrum-ol {
+    width: auto;
+    justify-content: flex-start;
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.ddlList{
+    position: absolute;
+    right: 0;
+    display: flex;
+    top: 0;
+    align-items: center; 
+    justify-content: flex-end;
+}
+.dropdown {
+    display: flex;
+    align-items: center;
+    margin: 5px 18px 0 0;
+}
+.label {
+    margin: 0 6px;
+}
+
+.form-group {
+    margin: 5px 0 0;
+    width: 100%;
+}
+.w-105 {
+    width: 105px !important;
+}
+.dropdown-menu {
+    transform: translate3d(-33px, 35px, 0px) !important;
+}

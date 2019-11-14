@@ -1,0 +1,85 @@
+$primary: #FF3D7F;
+
+.notification-alert {
+  background:#20A8D8;
+}
+
+.micro-icon {
+    .mic {
+      color: #989898 !important;
+      cursor: not-allowed !important;
+    }
+  
+    .mic-icon,
+    .mic-icon-active {
+      cursor: pointer;
+      position: absolute;
+      right: 14px;
+      color: #318dc9;
+      top: 9px;
+      font-size: 20px !important;
+      z-index: 91;
+  
+      &:hover {
+        color: #0099cc;
+      }
+  
+    }
+  
+    .mic-icon-active {
+      color: #d42e2e;
+  
+      &:hover {
+        color: #d42e2e;
+      }
+    }
+  }
+  
+  .pulse-ring {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 3px solid $primary;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    animation: pulsate infinite 1s;
+  }
+  
+  .search-results {
+    position: absolute;
+    top: 34px;
+  }
+  @keyframes pulsate {
+    0% {
+      -webkit-transform: scale(1, 1);
+      opacity: 1;
+    }
+  
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes pulsate {
+    0% {
+      -webkit-transform: scale(1, 1);
+      opacity: 1;
+    }
+  
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      opacity: 0;
+    }
+  }
+
+  .userNameText {
+    color: #000000;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    .userNameText {
+        display: none;
+    }
+}

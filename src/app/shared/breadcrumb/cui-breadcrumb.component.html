@@ -1,0 +1,22 @@
+<div class="subheader col-lg-12">
+  <ol class="breadcrumb breadcrum-ol  col-lg-4">
+    <ng-template ngFor let-breadcrumb [ngForOf]="breadcrumbs | async" let-last=last>
+      <li class="breadcrumb-item" *ngIf="!breadcrumb.label.parent && breadcrumb.label.title && (breadcrumb.url.slice(-1) == '/' || last)"
+        [ngClass]="{active: last, invisible: isDashboard}">
+        <a *ngIf="!last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</a>
+        <span *ngIf="last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</span>
+      </li>
+      <ng-container *ngIf="breadcrumb.label.parent">
+        <li class="breadcrumb-item" [ngClass]="{invisible: isDashboard}">
+          <a [routerLink]="breadcrumb.label.parent.url">{{breadcrumb.label.parent.title}}</a>
+        </li>
+        <li class="breadcrumb-item" *ngIf="breadcrumb.label.title && (breadcrumb.url.slice(-1) == '/' || last)"
+          [ngClass]="{active: last, invisible: isDashboard}">
+          <a *ngIf="!last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</a>
+          <span *ngIf="last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</span>
+        </li>
+      </ng-container>
+    </ng-template>
+    <ng-content></ng-content>
+  </ol>
+</div>

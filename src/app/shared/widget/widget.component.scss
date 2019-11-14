@@ -1,0 +1,13 @@
+.widget-alignments {
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.widget-font-size {
+    font-size: 1rem;
+}
+
+.equal-height {
+    height: calc(100% - 1.5rem);
+}
