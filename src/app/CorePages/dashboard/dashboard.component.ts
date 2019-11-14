@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: 'dashboard.component.html'
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
 
@@ -48,6 +50,8 @@ export class DashboardComponent implements OnInit {
   ];
   public lineChartLegend = true;
   public lineChartType = 'line';
+
+  constructor() { }
 
   ngOnInit(): void {
   }
