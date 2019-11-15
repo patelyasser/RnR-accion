@@ -5,9 +5,10 @@ import { BadgesRoutingModule } from './badges-routing.module';
 import { BadgesComponent } from './badges.component';
 
 import { FormioModule } from 'angular-formio';
+import { GiveBadgesComponent } from './give-badges/give-badges.component';
 
 @NgModule({
-  declarations: [BadgesComponent],
+  declarations: [BadgesComponent, GiveBadgesComponent],
   imports: [
     CommonModule,
     BadgesRoutingModule,
