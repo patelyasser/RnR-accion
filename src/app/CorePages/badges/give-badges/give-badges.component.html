@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header">Give Badge</div>
         <div class="card-body">
-            <formio [src]="badgesFormURL"></formio>
+            <formio [src]="badgesFormURL" (submit)="onSubmit($event)"></formio>
         </div>
     </div>
 </div>

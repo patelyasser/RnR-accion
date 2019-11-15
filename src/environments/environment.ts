@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  formURL: 'https://form-builder.accionbreeze.com'
+  formURL: 'https://form-builder.accionbreeze.com',
+  notificationURL: 'https://notification.accionbreeze.com'
 };

@@ -40,6 +40,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserDetectService } from './shared/services/browser-detect.service';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   imports: [
@@ -55,7 +56,8 @@ import { BrowserDetectService } from './shared/services/browser-detect.service';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
-    LayoutModule
+    LayoutModule,
+    SharedModule
   ],
   declarations: [
     AppComponent,
