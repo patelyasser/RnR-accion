@@ -36,8 +36,8 @@ export class DashboardComponent implements OnInit {
   };
   public lineChartColours: Array<any> = [
     { // grey
-      backgroundColor: 'rgba(0,0,0,0.20)',
-      borderColor: 'rgba(148,159,177,1)',
+      backgroundColor: '#EEF9FC',
+      borderColor: '#20a8d8',
       pointBackgroundColor: 'rgba(148,159,177,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
