@@ -50,36 +50,36 @@
         </div>
       </div>
     </div><!--/.col-->
-
+    
     <div class="col-md-6">
-        <div class="card">
-          <div class="card-body" *ngIf="activeUsersData">
-            <div class="card-title h4">Active Users</div>
-            <table class="table table-responsive-sm table-hover table-outline mb-0">
-              <thead class="thead-light">
-                <tr>
-                  <th class="text-center"><i class="icon-people"></i></th>
-                  <th>Employee</th>
-                  <th class="text-center">Project</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let data of activeUsersData">
-                  <td class="text-center">
-                    <div class="avatar">
-                      <img src="assets/img/avatars/default_user.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
-                    </div>
-                  </td>
-                  <td>
-                    <div>{{data.name}}</div>
-                    <div class="small text-muted">{{data.message}}</div>
-                  </td>
-                  <td class="text-center">{{data.project}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div class="card">
+        <div class="card-body" *ngIf="activeUsersData">
+          <div class="card-title h4">Active Users</div>
+          <table class="table table-responsive-sm table-hover table-outline mb-0">
+            <thead class="thead-light">
+              <tr>
+                <th class="text-center"><i class="icon-people"></i></th>
+                <th>Employee</th>
+                <th class="text-center">Project</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of activeUsersData">
+                <td class="text-center">
+                  <div class="avatar">
+                    <img src="assets/img/avatars/default_user.jpg" class="img-avatar" alt="admin@bootstrapmaster.com">
+                  </div>
+                </td>
+                <td>
+                  <div>{{data.name}}</div>
+                  <div class="small text-muted">{{data.message}}</div>
+                </td>
+                <td class="text-center">{{data.project}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div><!--/.col-->
+      </div>
+    </div><!--/.col-->
   </div><!--/.row-->
 </div>
