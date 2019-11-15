@@ -59,7 +59,7 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
   ) {
     renderer.addClass(hostElement.nativeElement, 'app-header');
     renderer.addClass(hostElement.nativeElement, 'navbar');
-    this.setUserName();
+    // this.setUserName();
   }
 
   ngOnInit(): void {
