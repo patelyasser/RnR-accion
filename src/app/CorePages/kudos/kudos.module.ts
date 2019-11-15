@@ -5,10 +5,11 @@ import { KudosRoutingModule } from './kudos-routing.module';
 import { KudosComponent } from './kudos.component';
 
 import { FormioModule } from 'angular-formio';
+import { GiveKudosComponent } from './give-kudos/give-kudos.component';
 
 
 @NgModule({
-  declarations: [KudosComponent],
+  declarations: [KudosComponent, GiveKudosComponent],
   imports: [
     CommonModule,
     KudosRoutingModule,

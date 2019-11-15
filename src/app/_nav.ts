@@ -7,13 +7,13 @@ export const navItems: INavData[] = [
     icon: 'icon-speedometer',
   },
   {
-    name: 'Kudos',
-    url: '/kudos',
+    name: 'Badges',
+    url: '/badges',
     icon: 'icon-speedometer',
   },
   {
-    name: 'Badges',
-    url: '/badges',
+    name: 'Kudos',
+    url: '/kudos',
     icon: 'icon-speedometer',
   }
 ];
