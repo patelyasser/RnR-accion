@@ -1,9 +1,61 @@
-<a class="pointer-cursor btn btnClick pb-4" routerLink="add">
+<!-- <a class="pointer-cursor btn btnClick pb-4" routerLink="add">
     <i class="fa fa-plus pr-1" aria-hidden="true"></i> <span>Give Badges</span>
-</a>
+</a> -->
+
+<div class="row">
+    <div class="col-sm-6 col-lg-4" *ngFor="let badge of badges">
+        <div class="brand-card">
+            <div class="brand-card-header bg-default">
+                <img [src]="badge.imageURL" class="imgHeight" alt="">
+            </div>
+            <div class="brand-card-body">
+                <div>
+                    <div class="text-value">{{badge.given}}</div>
+                    <div class="text-uppercase text-muted small">Awarded</div>
+                </div>
+                <div>
+                    <div class="text-value">{{badge.received}}</div>
+                    <div class="text-uppercase text-muted small">Received</div>
+                </div>
+                <div>
+                    <a class="pointer-cursor btn btnClick pb-1 pt-1" (click)="routeWithData(badge.id)">
+                        <i class="fa fa-plus pr-1" aria-hidden="true"></i>
+                    </a>
+                    <div class="text-uppercase text-muted small">Give</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 col-lg-4" *ngFor="let badge of badges1">
+        <div class="brand-card">
+            <div class="brand-card-header bg-default">
+                <img [src]="badge.imageURL" class="imgHeight" alt="">
+            </div>
+            <div class="brand-card-body">
+                <div>
+                    <div class="text-value">{{badge.given}}</div>
+                    <div class="text-uppercase text-muted small">Awarded</div>
+                </div>
+                <div>
+                    <div class="text-value">{{badge.received}}</div>
+                    <div class="text-uppercase text-muted small">Received</div>
+                </div>
+                <div>
+                    <a class="pointer-cursor btn btnClick pb-1 pt-1" (click)="routeWithData(badge.id)">
+                        <i class="fa fa-plus pr-1" aria-hidden="true"></i>
+                    </a>
+                    <div class="text-uppercase text-muted small">Give</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="animated fadeIn">
-    <div class="row" *ngIf="badgesList">
+    <div class="row" *ngIf="badgesList.length">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body" *ngIf="badgesList">
