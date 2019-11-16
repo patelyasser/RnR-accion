@@ -15,9 +15,10 @@ export class KudosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getKudosList();
   }
 
-  getbadgesList() {
+  getKudosList() {
     this._dataService.getData('kudodetails')
       .subscribe((res) => {
         console.log(res);

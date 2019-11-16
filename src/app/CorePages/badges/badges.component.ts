@@ -19,7 +19,7 @@ export class BadgesComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.getbadgesList();
+    this.getBadgesList();
 
     this.badges = [{
       'imageURL': '../../../assets/img/brand/ace.svg',
@@ -56,7 +56,7 @@ export class BadgesComponent implements OnInit {
     }];
   }
 
-  getbadgesList() {
+  getBadgesList() {
     this._dataService.getData('badgedetails')
       .subscribe((res) => {
         console.log(res);
