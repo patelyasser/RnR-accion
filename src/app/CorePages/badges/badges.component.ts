@@ -22,34 +22,34 @@ export class BadgesComponent implements OnInit {
     this.getbadgesList();
 
     this.badges = [{
-      'imageURL': '../../../assets/img/brand/medal.svg',
+      'imageURL': '../../../assets/img/brand/ace.svg',
       'id': "ACE",
       'given': 0,
       'received': 0
     }, {
-      'imageURL': '../../../assets/img/brand/medal_1.svg',
+      'imageURL': '../../../assets/img/brand/maven.svg',
       'id': "Maven",
       'given': 0,
       'received': 0
     }, {
-      'imageURL': '../../../assets/img/brand/medal_1.svg',
+      'imageURL': '../../../assets/img/brand/customer_delight.svg',
       'id': "Customer Delight",
       'given': 0,
       'received': 0
     }];
 
     this.badges1 = [{
-      'imageURL': '../../../assets/img/brand/medal_3.svg',
+      'imageURL': '../../../assets/img/brand/rising_star.svg',
       'id': "Rising Star",
       'given': 0,
       'received': 0
     }, {
-      'imageURL': '../../../assets/img/brand/trophy.svg',
+      'imageURL': '../../../assets/img/brand/tech_panel.svg',
       'id': "Tech Panel",
       'given': 0,
       'received': 0
     }, {
-      'imageURL': '../../../assets/img/brand/certificate.svg',
+      'imageURL': '../../../assets/img/brand/outstanding_performer.svg',
       'id': "Outstanding Performer",
       'given': 0,
       'received': 0
