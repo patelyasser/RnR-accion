@@ -20,38 +20,6 @@ export class BadgesComponent implements OnInit {
 
   ngOnInit() {
     this.getBadgesList();
-
-    this.badges = [{
-      'imageURL': '../../../assets/img/brand/ace.svg',
-      'id': "ACE",
-      'given': 0,
-      'received': 0
-    }, {
-      'imageURL': '../../../assets/img/brand/maven.svg',
-      'id': "Maven",
-      'given': 0,
-      'received': 0
-    }, {
-      'imageURL': '../../../assets/img/brand/customer_delight.svg',
-      'id': "Customer Delight",
-      'given': 0,
-      'received': 0
-    }, {
-      'imageURL': '../../../assets/img/brand/rising_star.svg',
-      'id': "Rising Star",
-      'given': 0,
-      'received': 0
-    }, {
-      'imageURL': '../../../assets/img/brand/tech_panel.svg',
-      'id': "Tech Panel",
-      'given': 0,
-      'received': 0
-    }, {
-      'imageURL': '../../../assets/img/brand/outstanding_performer.svg',
-      'id': "Outstanding Performer",
-      'given': 0,
-      'received': 0
-    }];
   }
 
   getBadgesList() {
@@ -59,11 +27,55 @@ export class BadgesComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
         this.badgesList = res;
+        this.updateAwardData();
       });
   }
 
+  updateAwardData() {
+    this.badges = [{
+      'imageURL': '../../../assets/img/brand/ace.svg',
+      'id': "ACE",
+      'given': this.getCount('ACE'),
+      'received': Math.round(Math.random() * 10)
+    }, {
+      'imageURL': '../../../assets/img/brand/maven.svg',
+      'id': "Maven",
+      'given': this.getCount('Maven'),
+      'received': Math.round(Math.random() * 10)
+    }, {
+      'imageURL': '../../../assets/img/brand/customer_delight.svg',
+      'id': "Customer Delight",
+      'given': this.getCount('Customer Delight'),
+      'received': Math.round(Math.random() * 10)
+    }, {
+      'imageURL': '../../../assets/img/brand/rising_star.svg',
+      'id': "Rising Star",
+      'given': this.getCount('Rising Star'),
+      'received': Math.round(Math.random() * 10)
+    }, {
+      'imageURL': '../../../assets/img/brand/tech_panel.svg',
+      'id': "Tech Panel",
+      'given': this.getCount('Tech Panel'),
+      'received': Math.round(Math.random() * 10)
+    }, {
+      'imageURL': '../../../assets/img/brand/outstanding_performer.svg',
+      'id': "Outstanding Performer",
+      'given': this.getCount('Outstanding Performer'),
+      'received': Math.round(Math.random() * 10)
+    }];
+  }
+
+  getCount(key) {
+    let count = 0;
+    this.badgesList.forEach(element => {
+      if (element.badges === key)
+        count++;
+    });
+
+    return count;
+  }
+
   routeWithData(data) {
-    console.log(data)
     this._router.navigateByUrl('/badges/add', { state: {badges: data} });
   }
 
