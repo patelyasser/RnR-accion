@@ -1,7 +1,21 @@
 <div class="row">
     <div class="col-xl-33 col-xl-4 col-lg-4 col-md-6 col-sm-12 pb-3 " *ngFor="let item of certificateData">
         <div class="card">
-            <div class="card-header" [innerHTML]="item?.awardName"></div>
+            <div class="card-header">{{item?.awardName}}
+                <div class="btn-group pull-right" dropdown>
+                    <img src="../../../assets/img/brand/share.svg" dropdownToggle class="dropdown-toggle" style="height: 18px;">
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                        role="menu" aria-labelledby="button-basic">
+                        <img src="../../../assets/img/social/facebook.svg" data-toggle="tooltip" title="Facebook" alt="">
+                        <img src="../../../assets/img/social/twitter.svg" alt="" data-toggle="tooltip" title="Twitter">
+                        <img src="../../../assets/img/social/linkedin.svg" alt="" data-toggle="tooltip" title="LinkedIn">
+                        <img src="../../../assets/img/social/instagram.svg" alt="" data-toggle="tooltip" title="Instagram">
+                        <img src="../../../assets/img/social/blink.ico" alt="" data-toggle="tooltip" title="Blink">
+                        <img src="../../../assets/img/social/download.svg" alt="" data-toggle="tooltip" title="Download">
+
+                    </ul>
+                </div>
+            </div>
             <div class="card-body">
                 <div class="row mb-0">
                     <img [src]="item?.url" class="imgResize">

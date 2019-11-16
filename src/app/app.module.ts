@@ -31,6 +31,8 @@ import { AppFooterModule } from './shared/footer/app-footer.module';
 import { AppHeaderModule } from './shared/header/app-header.module';
 import { AppSidebarModule } from './shared/sidebar/app-sidebar.module';
 import { LayoutModule } from './shared/shared-lib';
+import { CeiboShare } from 'ng2-social-share';
+
 
 // Import routing module
 import { AppRoutingModule } from './app.routing';
@@ -41,6 +43,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserDetectService } from './shared/services/browser-detect.service';
 import { SharedModule } from './shared/shared.module';
+import { NgxSocialButtonModule, SocialServiceConfig } from "ngx-social-button";
 
 @NgModule({
   imports: [
@@ -65,7 +68,8 @@ import { SharedModule } from './shared/shared.module';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CeiboShare
   ],
   providers: [{
     provide: LocationStrategy,

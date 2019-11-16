@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-certificates',
   templateUrl: './certificates.component.html',
-  styleUrls: ['./certificates.component.scss']
+  styleUrls: ['./certificates.component.scss'],
 })
 export class CertificateComponent implements OnInit {
 
   certificateData: Array<Object>;
+
   private myTemplate: any = "";
     constructor( ) {
         // http.get(myExternalPageLink).map((html:any) => this.myTemplate = html);
@@ -50,8 +51,8 @@ export class CertificateComponent implements OnInit {
     ]
   }
 
-  loadHTML(url) {
+  loadHTML(url): void {
     document.getElementById("certificate").innerHTML=`<object type="text/html" data=${url} ></object>`;
-}
+  }
 
 }
