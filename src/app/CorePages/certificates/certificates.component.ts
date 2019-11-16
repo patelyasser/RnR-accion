@@ -30,7 +30,7 @@ export class CertificateComponent implements OnInit {
       },{
         "awardName": "Customer Delight",
         "year": "2019",
-        "url": "../../../assets/img/brand/ace_award.png",
+        "url": "../../../assets/img/brand/customer_delight.png",
         "icon": "../../../assets/img/brand/customer_delight.svg"
       },
       {

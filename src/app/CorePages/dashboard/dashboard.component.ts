@@ -8,9 +8,9 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  
   radioModel: string = 'Month';
-
+  
   // lineChart
   public lineChartData: Array<any> = [
     {
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
     },
   ];
   public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July','August', 'September', 'October', 'November', 'December'];
+  'July','August', 'September', 'October', 'November', 'December'];
   public lineChartOptions: any = {
     animation: false,
     responsive: true,
@@ -48,54 +48,108 @@ export class DashboardComponent implements OnInit {
   ];
   public lineChartLegend = true;
   public lineChartType = 'line';
-
+  
   public leaderBoardData: any = [];
   public activeUsersData: any = [];
 
+  locale = 'en-us';
+
+  currentMonth: string = (new Date()).toLocaleString(this.locale, { month: "long" });
+  
   constructor(
     private _dataService: DataService
-  ) { }
-
-  ngOnInit(): void {
-    this._dataService.getData('filtered-data')
+    ) { }
+    
+    ngOnInit(): void {
+      this._dataService.getData('filtered-data')
       .subscribe((res) => {
         this.leaderBoardData = res.splice(0, 5);
       });
-
-    this.activeUsersData = [{
-      'name': 'Ashutosh',
-      'image': 'default_user',
-      'message': 'Added 5 comments/emoticons',
-      'project': 'Breeze'
-    }, {
-      'name': 'Jane',
-      'image': 'default_user',
-      'message': 'Added 4 comments/emoticons',
-      'project': 'FPG'
-    }, {
-      'name': 'Saurabh',
-      'image': 'default_user',
-      'message': 'Added 3 comments/emoticons',
-      'project': 'App Orchid'
-    }, {
-      'name': 'Anand',
-      'image': 'default_user',
-      'message': 'Added 2 comments/emoticons',
-      'project': 'Breeze'
-    }, {
-      'name': 'Amit',
-      'image': 'default_user',
-      'message': 'Added 2 comments/emoticons',
-      'project': 'Breeze'
-    }];
-  }
-
-  generateImageURl(url) {
-    if (url) {
-      return `${environment.aicURL}${url}`;
+      
+      this.activeUsersData = [{
+        'name': 'Ashutosh',
+        'image': 'default_user',
+        'message': 'Added 5 comments/emoticons',
+        'project': 'Breeze'
+      }, {
+        'name': 'Jane',
+        'image': 'default_user',
+        'message': 'Added 4 comments/emoticons',
+        'project': 'FPG'
+      }, {
+        'name': 'Saurabh',
+        'image': 'default_user',
+        'message': 'Added 3 comments/emoticons',
+        'project': 'App Orchid'
+      }, {
+        'name': 'Anand',
+        'image': 'default_user',
+        'message': 'Added 2 comments/emoticons',
+        'project': 'Breeze'
+      }, {
+        'name': 'Amit',
+        'image': 'default_user',
+        'message': 'Added 2 comments/emoticons',
+        'project': 'Breeze'
+      }];
     }
+    
+    generateImageURl(url) {
+      if (url) {
+        return `${environment.aicURL}${url}`;
+      }
+      
+      return "assets/img/avatars/default_user.jpg";
+    }
+    
+    generateIcons(data) {
+      let str = '', i;
+      
+      for (const key in data) {
+        switch (key) {
+          case 'ACE':
+            for (i = 0; i < data[key]; i++) {
+              str += `<img class="badges-height" src="../../../assets/img/brand/ace.svg">`
+            }
+            break;
+          
+          case 'Rising Star':
+            for (i = 0; i < data[key]; i++) {
+              str += `<img class="badges-height" src="../../../assets/img/brand/rising_star.svg">`
+            }
+            break;
 
-    return "assets/img/avatars/default_user.jpg";
+          case 'Maven':
+            for (i = 0; i < data[key]; i++) {
+              str += `<img class="badges-height" src="../../../assets/img/brand/maven.svg">`
+            }
+            break;
+
+          case 'Customer Delight':
+            for (i = 0; i < data[key]; i++) {
+              str += `<img class="badges-height" src="../../../assets/img/brand/customer_delight.svg">`
+            }
+            break;
+
+          case 'Tech Panel':
+            for (i = 0; i < data[key]; i++) {
+              str += `<img class="badges-height" src="../../../assets/img/brand/tech_panel.svg">`
+            }
+            break;
+
+          case 'Outstanding Performer':
+            for (i = 0; i < data[key]; i++) {
+              str += `<img class="badges-height" src="../../../assets/img/brand/outstanding_performer.svg">`
+            }
+            break;
+
+          default:
+          break;
+        }
+      }
+      
+      return str;
+    }
+    
   }
-
-}
+  
