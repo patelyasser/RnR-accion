@@ -36,9 +36,7 @@ export class BadgesComponent implements OnInit {
       'id': "Customer Delight",
       'given': 0,
       'received': 0
-    }];
-
-    this.badges1 = [{
+    }, {
       'imageURL': '../../../assets/img/brand/rising_star.svg',
       'id': "Rising Star",
       'given': 0,
