@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../shared/services/data.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,7 +37,7 @@ export class DashboardComponent implements OnInit {
     }
   };
   public lineChartColours: Array<any> = [
-    { // grey
+    {
       backgroundColor: '#EEF9FC',
       borderColor: '#20a8d8',
       pointBackgroundColor: 'rgba(148,159,177,1)',
@@ -50,35 +52,15 @@ export class DashboardComponent implements OnInit {
   public leaderBoardData: any = [];
   public activeUsersData: any = [];
 
-  constructor() { }
+  constructor(
+    private _dataService: DataService
+  ) { }
 
   ngOnInit(): void {
-    this.leaderBoardData = [{
-      'name': 'Ashutosh',
-      'image': 'default_user',
-      'message': 'Won 5 badges',
-      'project': 'Breeze'
-    }, {
-      'name': 'Jane',
-      'image': 'default_user',
-      'message': 'Won 4 badges',
-      'project': 'FPG'
-    }, {
-      'name': 'Saurabh',
-      'image': 'default_user',
-      'message': 'Won 3 badges',
-      'project': 'App Orchid'
-    }, {
-      'name': 'Anand',
-      'image': 'default_user',
-      'message': 'Won 2 badges',
-      'project': 'Breeze'
-    }, {
-      'name': 'Amit',
-      'image': 'default_user',
-      'message': 'Won 2 badges',
-      'project': 'Breeze'
-    }];
+    this._dataService.getData('filtered-data')
+      .subscribe((res) => {
+        this.leaderBoardData = res.splice(0, 5);
+      });
 
     this.activeUsersData = [{
       'name': 'Ashutosh',
@@ -106,6 +88,14 @@ export class DashboardComponent implements OnInit {
       'message': 'Added 2 comments/emoticons',
       'project': 'Breeze'
     }];
+  }
+
+  generateImageURl(url) {
+    if (url) {
+      return `${environment.aicURL}${url}`;
+    }
+
+    return "assets/img/avatars/default_user.jpg";
   }
 
 }

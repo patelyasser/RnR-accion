@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { NotificationService } from '../../../shared/services/notification.service';
 import { DataService } from '../../../shared/services/data.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-give-badges',
@@ -21,9 +21,16 @@ export class GiveBadgesComponent implements OnInit {
     private notificationService: NotificationService,
     private _dataService: DataService,
     private _router: Router,
-  ) { }
+    private _route: ActivatedRoute,
+  ) {
+  }
 
   ngOnInit() {
+    this.formData = {
+      "data": {
+        "badges": window.history.state.badges
+      }
+    };
   }
 
   onSubmit(event) {

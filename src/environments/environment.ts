@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   formURL: 'https://form-builder.accionbreeze.com',
   notificationURL: 'https://notification.accionbreeze.com',
-  apiURL: 'https://aic-content.accionbreeze.com'
+  apiURL: 'https://aic-content.accionbreeze.com',
+  aicURL: 'https://aic.accionbreeze.com'
 };

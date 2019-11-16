@@ -11,7 +11,6 @@ export class CertificateComponent implements OnInit {
 
   private myTemplate: any = "";
     constructor( ) {
-        // http.get(myExternalPageLink).map((html:any) => this.myTemplate = html);
     }
 
 
@@ -21,32 +20,36 @@ export class CertificateComponent implements OnInit {
         "awardName": "ACE",
         "year": "2019",
         "url": "../../../assets/img/brand/ace_award.png",
-        "contextParams": {}
+        "icon": "../../../assets/img/brand/ace.svg"
       },
       {
         "awardName": "Rising Star",
         "year": "2019",
-        "url": "../../../assets/img/brand/shining_star.png"
-      },
-      {
-        "awardName": "Outstanding Performer",
-        "year": "2019",
-        "url": "../../../assets/img/brand/outstanding_performer.png"
+        "url": "../../../assets/img/brand/shining_star.png",
+        "icon": "../../../assets/img/brand/rising_star.svg"
       },{
         "awardName": "Customer Delight",
         "year": "2019",
         "url": "../../../assets/img/brand/ace_award.png",
-        "contextParams": {}
+        "icon": "../../../assets/img/brand/customer_delight.svg"
       },
       {
         "awardName": "Maven",
         "year": "2019",
-        "url": "../../../assets/img/brand/maven.png"
+        "url": "../../../assets/img/brand/maven.png",
+        "icon": "../../../assets/img/brand/maven.svg"
       },
       {
         "awardName": "Tech Panel",
         "year": "2019",
-        "url": "../../../assets/img/brand/tech_panel.png"
+        "url": "../../../assets/img/brand/tech_panel.png",
+        "icon": "../../../assets/img/brand/tech_panel.svg"
+      },
+      {
+        "awardName": "Outstanding Performer",
+        "year": "2019",
+        "url": "../../../assets/img/brand/outstanding_performer.png",
+        "icon": "../../../assets/img/brand/outstanding_performer.svg",
       }
     ]
   }
