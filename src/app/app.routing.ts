@@ -50,6 +50,10 @@ export const routes: Routes = [
       {
         path: 'kudos',
         loadChildren: () => import('./CorePages/kudos/kudos.module').then(m => m.KudosModule)
+      },
+      {
+        path: 'certificates',
+        loadChildren: () => import('./CorePages/certificates/certificates.module').then(m => m.CertificatesModule)
       }
     ]
   },

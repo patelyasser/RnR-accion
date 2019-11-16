@@ -15,5 +15,10 @@ export const navItems: INavData[] = [
     name: 'Kudos',
     url: '/kudos',
     icon: 'icon-speedometer',
+  },
+  {
+    name: 'Certificates',
+    url: '/certificates',
+    icon: 'icon-speedometer',
   }
 ];
