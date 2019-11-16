@@ -109,37 +109,43 @@ export class DashboardComponent implements OnInit {
         switch (key) {
           case 'ACE':
             for (i = 0; i < data[key]; i++) {
-              str += `<img class="badges-height" src="../../../assets/img/brand/ace.svg">`
+              str += `<img class="badges-height" src="../../../assets/img/brand/ace.svg"
+                data-toggle="tooltip" title="ACE">`
             }
             break;
           
           case 'Rising Star':
             for (i = 0; i < data[key]; i++) {
-              str += `<img class="badges-height" src="../../../assets/img/brand/rising_star.svg">`
+              str += `<img class="badges-height" src="../../../assets/img/brand/rising_star.svg"
+                data-toggle="tooltip" title="Rising Star">`
             }
             break;
 
           case 'Maven':
             for (i = 0; i < data[key]; i++) {
-              str += `<img class="badges-height" src="../../../assets/img/brand/maven.svg">`
+              str += `<img class="badges-height" src="../../../assets/img/brand/maven.svg"
+                data-toggle="tooltip" title="Maven">`
             }
             break;
 
           case 'Customer Delight':
             for (i = 0; i < data[key]; i++) {
-              str += `<img class="badges-height" src="../../../assets/img/brand/customer_delight.svg">`
+              str += `<img class="badges-height" src="../../../assets/img/brand/customer_delight.svg"
+                data-toggle="tooltip" title="Customer Delight">`
             }
             break;
 
           case 'Tech Panel':
             for (i = 0; i < data[key]; i++) {
-              str += `<img class="badges-height" src="../../../assets/img/brand/tech_panel.svg">`
+              str += `<img class="badges-height" src="../../../assets/img/brand/tech_panel.svg"
+                data-toggle="tooltip" title="Tech Panel">`
             }
             break;
 
           case 'Outstanding Performer':
             for (i = 0; i < data[key]; i++) {
-              str += `<img class="badges-height" src="../../../assets/img/brand/outstanding_performer.svg">`
+              str += `<img class="badges-height" src="../../../assets/img/brand/outstanding_performer.svg"
+                data-toggle="tooltip" title="Outstanding Performer">`
             }
             break;
 
