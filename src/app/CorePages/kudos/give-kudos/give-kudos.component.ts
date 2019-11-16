@@ -16,6 +16,7 @@ export class GiveKudosComponent implements OnInit {
 
   ngOnInit() {
     this.setIcons();
+    console.log(window.history.state.kudos)
   }
   
   setIcons(): void {
@@ -28,7 +29,6 @@ export class GiveKudosComponent implements OnInit {
 
       imageLabels.forEach((label, index: number) => {
         let img = document.createElement('img');
-        
         img.setAttribute('data-toggle', 'tooltip')
         img.setAttribute('title', label[1])
         img.setAttribute('src', `assets/img/brand/${label[0]}.svg`)

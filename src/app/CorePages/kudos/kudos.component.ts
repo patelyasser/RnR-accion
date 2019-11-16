@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../shared/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kudos',
@@ -11,8 +12,8 @@ export class KudosComponent implements OnInit {
   kudosList: any = [];
 
   constructor(
-    private _dataService: DataService
-  ) { }
+    private _dataService: DataService,
+    private _router: Router) { }
 
   ngOnInit() {
     this.getKudosList();
@@ -24,6 +25,10 @@ export class KudosComponent implements OnInit {
         console.log(res);
         this.kudosList = res;
       });
+  }
+
+  routeWithData(data) {
+    this._router.navigateByUrl('/kudos/add', { state: {kudos: data} });
   }
 
 }

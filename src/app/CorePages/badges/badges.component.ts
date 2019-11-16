@@ -63,6 +63,7 @@ export class BadgesComponent implements OnInit {
   }
 
   routeWithData(data) {
+    console.log(data)
     this._router.navigateByUrl('/badges/add', { state: {badges: data} });
   }
 
