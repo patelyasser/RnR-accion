@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KudosComponent implements OnInit {
 
+  kudosList: any = [];
+
   constructor() { }
 
   ngOnInit() {
